@@ -1,0 +1,78 @@
+{% extends 'core/administrador/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Responsive Table Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h4 class="mb-4 text-center">PRODUCTOS LISTADOS DEL API</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        {% for aux in page_obj %}
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">NOMBRE</th>
+                                <th scope="col">CANTIDAD</th>
+                                <th scope="col">VALOR</th>
+                                <th scope="col">DESCRIPCIÓN</th>
+                                <th scope="col">FUNCIONALIDADES</th>
+                                <!--<th scope="col">Status</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{ aux.idP }}</th>
+                                <td>{{ aux.nombreP }}</td>
+                                <td>{{ aux.cantidad }}</td>
+                                <td>$ {{ aux.valor }}</td>
+                                <td>{{ aux.descripcion }}</td>
+                                
+                                <td>
+                                    {% if perms.core.change_producto %}
+                                    <a href="{% url 'productosupdate' aux.idP %}">
+                                        <button class="bg bg-success rounded fa fa-edit"> Modificar<div></div></button>
+                                    </a>
+                                    {% endif %}
+                                    {% if perms.core.delete_producto %}
+                                    <a href="{% url 'productosdelete' aux.idP %}">
+                                        <button class="bg bg-danger rounded fa fa-trash"> Eliminar<div></div></button>
+                                    </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page=1">&laquo; Primera</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                        {% elif num > page_obj.number|add:'-5' and num < page_obj.number|add:'5' %} <li
+                            class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link"
+                                    href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                            <li class="page-item"><a class="page-link"
+                                    href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a></li>
+                            {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Responsive Table End -->
+{% endblock %}

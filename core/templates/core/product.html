@@ -1,0 +1,389 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+<!-- Hero Start -->
+<div class="container-fluid bg-primary hero-header mb-5">
+    <div class="container text-center">
+        <h1 class="display-4 text-white mb-3 animated slideInDown">Productos</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Menú Principal</a></li>
+                <!--<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>-->
+                <li class="breadcrumb-item text-white active" aria-current="page">Productos</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+<!-- Product Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-primary mb-3"><span class="fw-light text-dark">Herramientas</span> Manuales.</h1>
+            <p class="mb-5"></p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/taladro-nuevo.avif' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Taladro</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <!--
+                    El formato de lo que debe ir en el href es {% url 'add_to_cart' product_id=1 %} el valor de product_id
+                    es el que va cambiando, este es solo un ejemplo en el que no coinciden el producto de la pagina con
+                    el de la base de datos.
+                    -->
+                    <a href="{% url 'add_to_cart' product_id=1 %}" class="btn btn-outline-primary px-3">añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/taladro.avif' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Anti-dandruff Shampoo</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="{% url 'add_to_cart' product_id=2 %}" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/set-completo.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Anti Hair Fall Shampoo</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/set-destornillador.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Hair Growing Shampoo</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/brocha.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Hair Shining Shampoo</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/martillo.png' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Anti-dandruff Shampoo</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/taladro.avif' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Anti Hair Fall Shampoo</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/taladro.png' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Hair Growing Shampoo</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product End -->
+
+
+<!-- Product Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-primary mb-3"><span class="fw-light text-dark">Materiales</span> Básicos.</h1>
+            <p class="mb-5"></p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/cemento.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Concreto hormigón 25 kg H20 preparado Presec</a>
+                    <h5 class="text-primary mb-3">CLP$ 2.910</h5>
+                    <a href="" class="btn btn-outline-primary px-3">añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/barniz.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(100)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Barniz Marino 1 galón Cerecita</a>
+                    <h5 class="text-primary mb-3">CLP$ 20.000</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/abrasivo.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <!--<small class="fa fa-star text-primary"></small>-->
+                        <small>(290)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Disco Abrasivo 22,2 mm 541 Dremel</a>
+                    <h5 class="text-primary mb-3">CLP$ 6.990</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/cermica45.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <!--<small class="fa fa-star text-primary"></small>-->
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Cerámica 45x45 cm Marbella natural 2.23 m2</a>
+                    <h5 class="text-primary mb-3">CLP$ 5.990 m2</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/ladrillo.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <!--<small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>-->
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Adoquin modular bloque 50x50x4 cm</a>
+                    <h5 class="text-primary mb-3">CLP$ 8.990</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al Carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/acabado.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Esmalte sintetico 946 ml Alta Temperatura</a>
+                    <h5 class="text-primary mb-3">CLP$ 18.290</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/pintura.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Pintura impermeabilizante 16 lts</a>
+                    <h5 class="text-primary mb-3">CLP$ 67.990</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/presec.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Mortero pega bloque hormigón ladrillo 25 kg</a>
+                    <h5 class="text-primary mb-3">CLP$ 2.680</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product End -->
+
+
+<!-- Product Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-primary mb-3"><span class="fw-light text-dark">Equipos de</span> Seguridad.</h1>
+            <p class="mb-5"></p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/caso33.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Casco Top 33 blanco 3 unidades Steelpro</a>
+                    <h5 class="text-primary mb-3">CLP$ 12.990</h5>
+                    <a href="" class="btn btn-outline-primary px-3">añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/guantewkr.jpeg' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Guante Wrk Work de poliéster anticorte</a>
+                    <h5 class="text-primary mb-3">CLP$ 6.000</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/lentes-seguridad.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Lente de Seguridad Securefit SF400 gris.</a>
+                    <h5 class="text-primary mb-3">CLP$ 7.990</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Añadir al carrito</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Product End -->
+
+
+<!-- Código JS al final -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const productId = button.getAttribute('data-productid');
+                console.log(`Añadiendo al carrito el producto con ID: ${productId}`);
+                // Aquí puedes agregar la lógica para añadir el producto al carrito
+                // Esto podría involucrar una llamada AJAX a tu backend para manejar la operación
+                // Por ahora, simplemente imprimimos el ID del producto en la consola
+                event.preventDefault(); // Evita el comportamiento predeterminado del botón
+            });
+        });
+    });
+</script>
+{% endblock %}

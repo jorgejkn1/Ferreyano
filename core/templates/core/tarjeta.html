@@ -1,0 +1,134 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Hero Start -->
+<div class="container-fluid bg-primary hero-header mb-5">
+    <div class="container text-center">
+        <h1 class="display-4 text-white mb-3 animated slideInDown">Tarjeta</h1>
+        <!--<nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Blog Articles</li>
+            </ol>
+        </nav>-->
+    </div>
+</div>
+<!-- Hero End -->
+
+<style>
+.StripeElement{
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow:  0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill{
+    background-color: #fefed5 !important;
+}
+
+
+</style>
+<script src="https://js.stripe.com/v3/"></script>
+
+<form action="{% url 'cargo' %}" method="post" id="payment-form">{% csrf_token %}
+    <div class="form-row">
+        <label for="cantidad">Por favor eliga la cantidad A Donar</label>
+        <section name="cantidad" id="cantidad"></section>
+
+    </div>
+    <div class="form-row">
+        <label for="card-element">
+            Tarjeta de credito o Debito 
+        </label>
+        <div id="card-element" class="form-control">
+
+            <!--elementos aqui-->
+        </div>
+
+        <!--errors-->
+        <div id="card-errors" role="alert"></div>
+    </div>
+    <button type="submit" class="btn btn-lg btn-success">confirmar Pago</button>
+</form>
+
+<script>
+var stripe = Stripe('pk_test_51PW4vxLR94EtMer1WdSWz0IRGV7tYRO4lsQzK1wNavY9UUnOGLfmqrvZ21m9fzzZlEOU48iF4pd61TIFHxRtBNYb00E9PWlvQM')
+
+//crear instancia y elementos
+var elements = stripe.elements();
+
+var style = {
+    base: {
+        color: '#32335d',
+        fontFamily: '"Helvetica Neue", Helvetiva, sans-serif',
+        fontSmoolthing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder':{
+            color: '#aab7c4'
+        }
+    },
+    invalid: {
+        color:'#fa755a',
+        iconColor: '#fa755a'
+    }
+};
+// Creación de instancia del elemento tarjeta
+var card = elements.create('card', { style });
+
+// Añadir la instancia de la tarjeta a un elemento HTML <div> con id 'card-element'
+card.mount('#card-element');
+
+// Manejar los errores de validación en tiempo real desde el elemento de la tarjeta
+card.on('change', function(event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.textContent = '';
+    }
+});
+
+//hardle form submission
+var form = document.getElementById('payment-form');
+form.addEventListener('submit',function(event){
+    event.preventDefault();
+
+    stripe.createToken(card).then(function(result){
+        if(result.error){
+            var errorElement = document.getElementById('card-errors');
+            errorElement.textContent = result.error.message;
+        }else{
+            stripeTokenHardler('result.token');
+        }
+        
+        
+    });
+});
+
+//submit the form with the token id
+function stripeTokenHardler(token){
+    var form = document.getElementById('payment-form');
+    var hiddentInput = document.createElement('input');
+    hiddentInput.setAttribute('type', 'hidden');
+    hiddentInput.setAttribute('name','stripeToken');
+    hiddentInput.setAttribute('value',token.id);
+    form.appendChild(hidddenInput);
+
+    //submit the for
+    form.submit();
+}
+
+
+</script>
+{% endblock %}

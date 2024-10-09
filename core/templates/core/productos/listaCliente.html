@@ -1,0 +1,85 @@
+{% extends 'core/administrador/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Responsive Table Start -->
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h4 class="mb-4 text-center">EMPLEADOS LISTADOS</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">RUT</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">APELLIDO</th>
+                            <th scope="col">CORREO</th>
+                            <th scope="col">DIRECCIÓN</th>
+                            <th scope="col">FUNCIONALIDADES</th>
+                        </tr>
+                        {% for aux in page_obj %}
+                        <!--<thead>
+                            <tr>
+                                <th scope="col">Rut</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">ZIP</th>
+                            </tr>
+                        </thead>-->
+                        <tbody>
+                            <tr>
+                                <th><a href="{% url 'clientedetalle' aux.id %}">
+                                    <button class="bg bg-success rounded fa fa-table">Detalle<div></div></button>
+                                </a></th>
+                                <th scope="row">{{ aux.rut }}</th>
+                                <td>{{ aux.nombre }}</td>
+                                <td>{{ aux.apellido }}</td>
+                                <td>{{ aux.correo }}</td>
+                                <td>{{ aux.direccion }}</td>
+                                <td>
+                                    <a href="{% url 'clientesupdate' aux.id %}">
+                                        <button class="bg bg-success rounded fa fa-user-edit"> Modificar<div></div>
+                                        </button>
+                                    </a>
+                                    <a href="{% url 'clientesdelete' aux.id %}">
+                                        <button class="bg bg-danger rounded fa fa-trash"> Eliminar<div></div></button>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page=1">&laquo; Primera</a></li>
+                        <li class="page-item"><a class="page-link"
+                                href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                        {% elif num > page_obj.number|add:'-5' and num < page_obj.number|add:'5' %} <li
+                            class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link"
+                                    href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                            <li class="page-item"><a class="page-link"
+                                    href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a></li>
+                            {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Responsive Table End -->
+{% endblock %}

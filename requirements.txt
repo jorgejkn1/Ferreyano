@@ -1,0 +1,17 @@
+django
+django-admin-interface
+django_crispy_forms
+crispy_bootstrap4
+psycopg2
+stripe
+django_crispy_forms
+crispy_bootstrap4
+pillow
+djangorestframework
+django-simple-captcha
+django-recaptcha
+django-multi-captcha-admin
+pytest 
+pytest-django
+django-admin-confirm
+django-axes 

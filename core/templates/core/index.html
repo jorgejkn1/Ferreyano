@@ -1,0 +1,542 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Hero Start -->
+<div class="container-fluid bg-primary hero-header mb-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="fw-light text-white animated slideInRight">Ferreteria</h3>
+                <h1 class="display-4 text-white animated slideInRight">Un lugar <span class="fw-light text-dark">Donde
+                    </span> Encontraras los productos Necesarios</h1>
+                <p class="text-white mb-4 animated slideInRight">Encontraras desde productos básicos, hasta herramientas
+                    manuales. para la necesidad de todos los usuarios que dispongan de unos buenos productos.</p>
+                <a href="" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">Comprar Ahora</a>
+                <a href="" class="btn btn-outline-dark py-2 px-4 animated slideInRight">Contactanos</a>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid animated pulse infinite" src="{% static 'core/img/taladro-fondo.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+<!-- Feature Start -->
+<div class="container-fluid py-5">
+    <h4 class="text-center mb-5">CATEGORÍAS DESTACADAS</h4>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <a href="">
+                    <div class="feature-item position-relative bg-primary text-center p-3">
+                        <div class="border py-5 px-3">
+                            <!--<i class="fa fa-leaf fa-3x text-dark mb-4"></i>-->
+                            <h5 class="text-white mb-0">Herramientas Manuales</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <a href="">
+                    <div class="feature-item position-relative bg-primary text-center p-3">
+                        <div class="border py-5 px-3">
+                            <!--<i class="fa fa-tint-slash fa-3x text-dark mb-4"></i>-->
+                            <h5 class="text-white mb-0">Materiales Básicos</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <a href="">
+                    <div class="feature-item position-relative bg-primary text-center p-3">
+                        <div class="border py-5 px-3">
+                            <!--<i class="fa fa-times fa-3x text-dark mb-4"></i>-->
+                            <h5 class="text-white mb-0">Equipos de Seguridad </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid animated pulse infinite" src="{% static 'core/img/martillo.png' %}">
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="text-primary mb-4">Martillo Bahco <span class="fw-light text-dark"> </span></h1>
+                <p class="mb-4">Martillo Carpintero Bahco Mango Ergonomico De Fibra De Vidrio 450 G 16 Oz.
+                    El Martillo Carpintero Bahco con mango ergonómico de fibra de vidrio es una herramienta esencial
+                    para cualquier profesional o entusiasta del bricolaje. Con un peso de 680 g y un largo de 335 cm,
+                    este martillo está diseñado para proporcionar un equilibrio perfecto entre peso y longitud, lo que
+                    facilita su manejo y reduce la fatiga durante su uso.
+                </p>
+                <h4 class="mb-4">Lo que tienes que saber de este producto</h4>
+                <p>-Material de la cabeza: acero pulido brillante.</p>
+                <p>-Material de la manija: fibra de vidrio.</p>
+                <a class="btn btn-primary py-2 px-4" href="">Comprar Ahora</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Deal Start -->
+<div class="container-fluid deal bg-primary my-5 py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid animated pulse infinite" src="{% static 'core/img/taladro.png' %}">
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="bg-white text-center p-4">
+                    <div class="border p-4">
+                        <!--<p class="mb-2">Natural & Organic Shampoo</p>-->
+                        <h2 class="fw-bold text-uppercase mb-4">Oferta del Día</h2>
+                        <h1 class="display-4 text-primary mb-4">CLP$ 34.995</h1>
+                        <p>Antes: CLP$ 69.990</p>
+                        <h5>Taladro Percutor Inalámbrico Marca Bosch</h5>
+                        <p class="mb-4">El taladro percutor eléctrico Bosch GSB 13 RE destaca en el ámbito industrial
+                            gracias a su potencia de 750W y su diseño compacto y ligero. Su rendimiento excepcional se
+                            combina con una construcción robusta que incluye una carcasa reforzada de alta calidad, lo
+                            que garantiza durabilidad y una larga vida útil en entornos de trabajo exigentes.</p>
+                        <!--<div class="row g-0 cdt mb-4">
+                            <div class="col-3">
+                                <h1 class="display-6" id="cdt-days"></h1>
+                            </div>
+                            <div class="col-3">
+                                <h1 class="display-6" id="cdt-hours"></h1>
+                            </div>
+                            <div class="col-3">
+                                <h1 class="display-6" id="cdt-minutes"></h1>
+                            </div>
+                            <div class="col-3">
+                                <h1 class="display-6" id="cdt-seconds"></h1>
+                            </div>
+                        </div>-->
+                        <a class="btn btn-primary py-2 px-4" href="">Comprar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Deal End -->
+
+<!-- Feature Start -->
+<div class="container-fluid py-5">
+    <h4 class="text-center mb-5">MARCAS DESTACADAS</h4>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <a href="">
+                    <div class="feature-item position-relative bg-primary text-center p-3">
+                        <div class="border py-5 px-3">
+                            <!--<i class="fa fa-leaf fa-3x text-dark mb-4"></i>-->
+                            <!--<i><img class="img-fluid pulse infinite" src="{% static 'core/img/MAKITA.png' %}"></i>-->
+                            <h1>MAKITA</h1>
+                            <h5 class="text-white mb-0 mt-4">Herramientas Manuales</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <a href="">
+                    <div class="feature-item position-relative bg-primary text-center p-3">
+                        <div class="border py-5 px-3">
+                            <!--<i class="fa fa-tint-slash fa-3x text-dark mb-4"></i>-->
+                            <!--<i><img class="img-fluid pulse infinite" src="{% static 'core/img/ceresita.jpg' %}"></i>-->
+                            <h1>CERESITA</h1>
+                            <h5 class="text-white mb-0 mt-4">Materiales Básicos</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <a href="">
+                    <div class="feature-item position-relative bg-primary text-center p-3">
+                        <div class="border py-5 px-3">
+                            <!--<i class="fa fa-times fa-3x text-dark mb-4"></i>-->
+                            <!--<i><img class="img-fluid pulse infinite" src="{% static 'core/img/' %}"></i>-->
+                            <h1>ANSELL</h1>
+                            <h5 class="text-white mb-0 mt-4">Equipos de Seguridad</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+<!-- Feature Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-primary mb-3"><span class="fw-light text-dark">Los Mejores Beneficios De Nuestro</span>
+                Taladro Percutor
+                18v Makita</h1>
+            <p class="mb-5">Herramienta de 18 Volts.
+                Protección de la batería frente sobrecargas.
+                Engranajes metálicos para una perfecta transmisión de la fuerza y mayor durabilidad.
+                Diseño ergonómico con mango antideslizante para un perfecto control de la herramienta y mayor comodidad.
+                16 posiciones de par de apriete + 1 directa. Además dispone de modo percusión.
+                Compatible con baterías de 3 a 6 Ah LXT.</p>
+        </div>
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="row g-5">
+                    <div class="col-12 d-flex">
+                        <div class="btn-square rounded-circle border flex-shrink-0" style="width: 80px; height: 80px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h5>Incluye función percutor</h5>
+                            <hr class="w-25 bg-primary my-2">
+                            <span>Esto permite que el taladro no solo gire, sino que también perfore materiales duros
+                                como concreto o ladrillo mediante una acción de martilleo..</span>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="btn-square rounded-circle border flex-shrink-0" style="width: 80px; height: 80px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h5>Diseño ergonómico</h5>
+                            <hr class="w-25 bg-primary my-2">
+                            <span>Esto para que sea cómodo y fácil de usar, reduciendo la fatiga y el riesgo
+                                de lesiones</span>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="btn-square rounded-circle border flex-shrink-0" style="width: 80px; height: 80px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h5>Incluye Cargador</h5>
+                            <hr class="w-25 bg-primary my-2">
+                            <span>Con un cargador con gran potencia, gracias a su motor potente, bateria de alta
+                                capacidad y su cargador rapido.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid animated pulse infinite" src="{% static 'core/img/taladro.avif' %}">
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <div class="row g-5">
+                    <div class="col-12 d-flex">
+                        <div class="btn-square rounded-circle border flex-shrink-0" style="width: 80px; height: 80px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h5>Larga Durabilidad</h5>
+                            <hr class="w-25 bg-primary my-2">
+                            <span>Una larga durabilidad gracias al diseño ergonomico, los materiales nos pudimos enfocar
+                                en una gran resistencia y calidad.</span>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="btn-square rounded-circle border flex-shrink-0" style="width: 80px; height: 80px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h5>Buen Rendimiento</h5>
+                            <hr class="w-25 bg-primary my-2">
+                            <span>Gracias a que tiene un motor potente con suficiente potencia para manejar grandes
+                                tares. Velocidad variables. Y por la funcion percutor con la cual viene integrada</span>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="btn-square rounded-circle border flex-shrink-0" style="width: 80px; height: 80px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h5>Con función destornillador</h5>
+                            <hr class="w-25 bg-primary my-2">
+                            <span>Muy útil que permite usar el taladro no solo para perforar, sino también para
+                                atornillar y desatornillar.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+
+<!-- How To Use Start -->
+<!--<div class="container-fluid how-to-use bg-primary my-5 py-5">
+    <div class="container text-white py-5">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-white mb-3"><span class="fw-light text-dark">How To Use Our</span> Natural & Organic
+                <span class="fw-light text-dark">Hair Shampoo</span>
+            </h1>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada
+                consequat, nibh erat tempus risus.</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.1s">
+                <div class="btn-square rounded-circle border mx-auto mb-4" style="width: 120px; height: 120px;">
+                    <i class="fa fa-home fa-3x text-dark"></i>
+                </div>
+                <h5 class="text-white">Wash Hair With Water</h5>
+                <hr class="w-25 bg-light my-2 mx-auto">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada
+                    consequat.</span>
+            </div>
+            <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.3s">
+                <div class="btn-square rounded-circle border mx-auto mb-4" style="width: 120px; height: 120px;">
+                    <i class="fa fa-home fa-3x text-dark"></i>
+                </div>
+                <h5 class="text-white">Apply Shampoo On Hair</h5>
+                <hr class="w-25 bg-light my-2 mx-auto">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada
+                    consequat.</span>
+            </div>
+            <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.5s">
+                <div class="btn-square rounded-circle border mx-auto mb-4" style="width: 120px; height: 120px;">
+                    <i class="fa fa-home fa-3x text-dark"></i>
+                </div>
+                <h5 class="text-white">Wait 5 Mins And Wash</h5>
+                <hr class="w-25 bg-light my-2 mx-auto">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada
+                    consequat.</span>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- How To Use End -->
+
+
+<!-- Product Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-primary mb-3"><span class="fw-light text-dark">Nuestros Productos</span> Mejores Valorados
+            </h1>
+            <p class="mb-5">Gracias a la gente estos son los productos mejores valorados de Ferreyano.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/set-completo.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Set Herramientas Manuales 120 Piezas Makita E-08713</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/taladro-nuevo.avif' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Taladro percutor GSB 550 Re 550W 220V + 3 brocas</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/set-destornillador.webp' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Set 115 Pcs Destornilladores Precisión Torx Magnéticos</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="product-item text-center border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/tornillo-techo.jpg' %}" alt="">
+                    <div class="mb-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small>(99)</small>
+                    </div>
+                    <a href="" class="h6 d-inline-block mb-2">Tornillo para techo 12"x2" 200 unidades</a>
+                    <h5 class="text-primary mb-3">$99.99</h5>
+                    <a href="" class="btn btn-outline-primary px-3">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product End -->
+
+
+<!-- Testimonial Start -->
+<div class="container-fluid testimonial bg-primary my-5 py-5">
+    <div class="container text-white py-5">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-white mb-3">Que Dicen Nuestro Clientes <span class="fw-light text-dark">Sobre Nuestro
+                    Productos.</span></h1>
+            <p class="mb-5">En esta seccion encontraras los comentarios mas valorados de nuestra página.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.1s">
+                    <div class="testimonial-item text-center" data-dot="1">
+                        <img class="img-fluid border p-2" src="{% static 'core/img/testimonial-1.jpg' %}" alt="">
+                        <h5 class="fw-light lh-base text-white">"Me encanta venir a esta ferretería porque siempre
+                            tienen lo que busco y más. El personal es muy amable y conocedor, lo que hace que mis
+                            compras sean rápidas y eficientes. Definitivamente la recomendaría a cualquiera que necesite
+                            productos de calidad para sus proyectos."</h5>
+                        <h5 class="mb-1">Ana Martínez</h5>
+                        <h6 class="fw-light text-white fst-italic mb-0">Clienta Satisfecha</h6>
+                    </div>
+                    <div class="testimonial-item text-center" data-dot="2">
+                        <img class="img-fluid border p-2" src="{% static 'core/img/testimonial-2.jpg' %}" alt="">
+                        <h5 class="fw-light lh-base text-white">"Siempre encuentro todo lo que necesito en esta
+                            ferretería. La atención al cliente es excelente y los precios son muy competitivos. Además,
+                            siempre me ofrecen buenos consejos para mis proyectos de bricolaje. No cambiaría de lugar
+                            por nada."</h5>
+                        <h5 class="mb-1">Juan Pérez</h5>
+                        <h6 class="fw-light text-white fst-italic mb-0">Cliente Satisfecho</h6>
+                    </div>
+                    <div class="testimonial-item text-center" data-dot="3">
+                        <img class="img-fluid border p-2" src="{% static 'core/img/testimonial-3.jpg' %}" alt="">
+                        <h5 class="fw-light lh-base text-white">"La variedad de productos y herramientas que tienen aquí
+                            es impresionante. Cada vez que visito la ferretería, encuentro justo lo que necesito, y el
+                            personal siempre está dispuesto a ayudarme con cualquier duda. Es mi lugar de confianza para
+                            todo lo relacionado con la construcción y el hogar."</h5>
+                        <h5 class="mb-1">Carlos Gómez</h5>
+                        <h6 class="fw-light text-white fst-italic mb-0">Cliente Satisfecho</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+<!-- Blog Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-primary mb-3"><span class="fw-light text-dark">Los Articulos</span> Mas Vendidos </h1>
+            <p class="mb-5">Aqui estan los productos que mas se han vendido en esta ultima semana.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <div class="blog-item border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/taladro.avif' %}" alt="">
+                    <a href="" class="h5 lh-base d-inline-block">Taladro Percutor 18v 13mm Makita Dhp453x10 - 1
+                        Bateria</a>
+                    <div class="d-flex text-black-50 mb-2">
+                        <div class="pe-3">
+                            <small class="fa fa-eye me-1"></small>
+                            <small>1000 Vistas</small>
+                        </div>
+                        <div class="pe-3">
+                            <small class="fa fa-comments me-1"></small>
+                            <small>200 Comentarios</small>
+                        </div>
+                    </div>
+                    <!--<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non
+                        malesuada consequat.</p>-->
+                    <a href="" class="btn btn-outline-primary px-3">Leer Más</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="blog-item border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/set-completo.webp' %}" alt="">
+                    <a href="" class="h5 lh-base d-inline-block">Set Herramientas Manuales 120 Piezas Makita E-08713</a>
+                    <div class="d-flex text-black-50 mb-2">
+                        <div class="pe-3">
+                            <small class="fa fa-eye me-1"></small>
+                            <small>873 Vistas</small>
+                        </div>
+                        <div class="pe-3">
+                            <small class="fa fa-comments me-1"></small>
+                            <small>50 Comentarios</small>
+                        </div>
+                    </div>
+                    <!--<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non
+                        malesuada consequat.</p>-->
+                    <a href="" class="btn btn-outline-primary px-3">Leer Más</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <div class="blog-item border h-100 p-4">
+                    <img class="img-fluid mb-4" src="{% static 'core/img/set-destornillador.webp' %}" alt="">
+                    <a href="" class="h5 lh-base d-inline-block">Set 115 Pcs Destornilladores Precisión Torx
+                        Magnéticos</a>
+                    <div class="d-flex text-black-50 mb-2">
+                        <div class="pe-3">
+                            <small class="fa fa-eye me-1"></small>
+                            <small>924 Vistas</small>
+                        </div>
+                        <div class="pe-3">
+                            <small class="fa fa-comments me-1"></small>
+                            <small>22 Comentarios</small>
+                        </div>
+                    </div>
+                    <!--<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non
+                        malesuada consequat.</p>-->
+                    <a href="" class="btn btn-outline-primary px-3">Leer Más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+
+<!-- Newsletter Start -->
+<div class="container-fluid newsletter bg-primary py-5 my-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-white mb-3"><span class="fw-light text-dark">Dejanos tu Comentario</span> Ferreyano</h1>
+            <p class="text-white mb-4">Dejanos un mensaje sobre que opinas de los productos
+                y la página para saber en que podemos mejorar.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-7 wow fadeIn" data-wow-delay="0.5s">
+                <div class="position-relative w-100 mt-3 mb-2">
+                    <input class="form-control w-100 py-4 ps-4 pe-5" type="text" placeholder="Ingresa Tu Comentario"
+                        style="height: 48px;">
+                    <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                            class="fa fa-paper-plane text-white fs-4"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Newsletter End -->
+{% endblock %}

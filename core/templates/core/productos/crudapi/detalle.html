@@ -1,0 +1,33 @@
+{% extends 'core/administrador/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Responsive Table Start -->
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <th><a href="{% url 'clientes' %}">
+                        <button class="bg bg-light rounded fa fa-home"> ATRÁS<div></div></button>
+                    </a></th>
+                <h4 class="mb-4 text-center">DETALLE EMPLEADO: N° {{ cliente.id }}</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">RUT: {{ cliente.rut }}</th>
+                                <th>NOMBRE: {{ cliente.nombre }}</th>
+                                <th>APELLIDO: {{ cliente.apellido }}</th>
+                                <th>CORREO: {{ cliente.correo }}</th>
+                                <th>DIRECCION: {{ cliente.direccion }}</th>
+                                <!--<td></td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Responsive Table End -->
+{% endblock %}

@@ -1,0 +1,200 @@
+{% extends 'core/base.html' %}
+{% block contenido %}
+<!-- Hero Start -->
+<div class="container-fluid bg-primary hero-header mb-5">
+    <div class="container text-center">
+        <h1 class="display-4 text-white mb-3 animated slideInDown">Carrito</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Menú Principal</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Tienda</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+
+
+
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+        <div class="row mb-5">
+            <form class="col-md-12" method="post">
+                <div class="site-blocks-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">Imagen</th>
+                                <th class="product-name">Producto</th>
+                                <th class="product-price">Precio</th>
+                                <th class="product-quantity">Cantidad</th>
+                                <th class="product-total">Total</th>
+                                <th class="product-remove">Descartar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                            <tr>
+                                <td class="product-thumbnail">
+                                    <img src="" alt="Image" class="img-fluid" width="70">
+                                </td>
+                                <td class="product-name">
+                                    <!--
+                                    Aqui se modifico el item.product.nombre porque ademas de estar mal
+                                    se puede acceder al nombre directamente desde el "carrito"
+                                    -->
+                                    <h2 class="h5 text-black">{{ item.nombre }}</h2>
+                                </td>
+                                <!--
+                                Aqui se modifico item.product.precio, porque el modelo es producto, no product
+                                y el campo es valor, no precio
+                                -->
+                                <td>CLP$ {{ item.producto.valor }}</td>
+                                <td>
+                                    <div class="input-group mb-3 d-flex align-items-center quantity-container"
+                                        style="max-width: 120px;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-black decrease"
+                                                type="button">&minus;</button>
+                                        </div>
+                                        <input type="text" class="form-control text-center quantity-amount"
+                                            value="{{ item.cantidad }}" placeholder=""
+                                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--
+                                Aqui se modifico item.total por item.precio
+                                y el campo es precio, no total
+                                -->
+                                <td>CLP$ {{ item.precio }}</td>
+                                <td><form method="POST" action="{% url 'delete_cart_item' p_item_id=item.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary my-3">Eliminar</button>
+                                </form></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <a href="{% url 'product' %}"><button
+                                class="btn btn-outline-black btn-sm btn-block btn-primary">Seguir
+                                Comprando</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pl-5">
+                <div class="row justify-content-end">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-12 text-right border-bottom mb-5">
+                                <h3 class="text-black h4 text-uppercase">TOTAL DEL CARRITO</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <span class="text-black">Subtotal</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">CLP$ {{ subtotal }}</strong>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6">
+                                <span class="text-black">Total</span>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong class="text-black">CLP$ {{ total }}</strong>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="{% url 'tarjeta' %}"><button
+                                        class="btn btn-black btn-lg py-3 btn-block btn-primary">Proceder al
+                                        pago</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const quantityContainers = document.querySelectorAll(".quantity-container");
+        const deleteButtons = document.querySelectorAll(".btn-delete");
+
+        quantityContainers.forEach(container => {
+            const decreaseButton = container.querySelector(".decrease");
+            const increaseButton = container.querySelector(".increase");
+            const quantityAmount = container.querySelector(".quantity-amount");
+
+            decreaseButton.addEventListener("click", () => {
+                let currentValue = parseInt(quantityAmount.value);
+                if (currentValue > 1) {
+                    quantityAmount.value = currentValue - 1;
+                    updateCartItem(container.dataset.cartitemid, quantityAmount.value);
+                }
+            });
+
+            increaseButton.addEventListener("click", () => {
+                let currentValue = parseInt(quantityAmount.value);
+                quantityAmount.value = currentValue + 1;
+                updateCartItem(container.dataset.cartitemid, quantityAmount.value);
+            });
+        });
+
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const cartItemId = button.dataset.cartitemid;
+                deleteCartItem(cartItemId);
+            });
+        });
+
+        function updateCartItem(cartItemId, quantity) {
+            fetch(`/update-cart/${cartItemId}/${quantity}/`, {
+                    method: 'GET',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message); // Muestra un mensaje de confirmación (opcional)
+                    // Actualiza el precio total y otros elementos si es necesario
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function deleteCartItem(cartItemId) {
+            fetch(`/delete-cart-item/${cartItemId}/`, {
+                    method: 'GET',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message); // Muestra un mensaje de confirmación (opcional)
+                    // Elimina la fila del producto del carrito
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'core/administrador/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Responsive Table Start -->
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <th><a href="{% url 'productos' %}">
+                        <button class="bg bg-light rounded fa fa-home"> ATRÁS<div></div></button>
+                    </a></th>
+                <h4 class="mb-4 text-center">DETALLE PRODUCTO: N° {{ producto.numero }}</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>ID: {{ producto.idP }}</th>
+                                <th>NOMBRE: {{ producto.nombreP }}</th>
+                                <th>CANTIDAD: {{ producto.cantidad }}</th>
+                                <th>VALOR: $ {{ producto.valor }}</th>
+                                <th>DESCRIPCION: {{ producto.descripcion }}</th>
+                                <!--<td></td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Responsive Table End -->
+{% endblock %}

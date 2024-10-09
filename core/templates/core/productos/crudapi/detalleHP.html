@@ -1,0 +1,34 @@
+{% extends 'core/administrador/base.html' %}
+{% load static %}
+{% block contenido %}
+<!-- Responsive Table Start -->
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <th><a href="{% url 'harryapi' %}">
+                        <button class="bg bg-light rounded fa fa-home"> ATRÁS<div></div></button>
+                    </a></th>
+                <h4 class="mb-4 text-center">DETALLE HP API: N° {{ hp_api.id }}</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>NOMBRE: {{ hp_api.name }}</th>
+                                <th>PATRONUS: {{ hp_api.patronus }}</th>
+                                <th>CASA: {{ hp_api.house }}</th>
+                                <th>NOMBRES ALTERNATIVOS: {{ hp_api.altenate_names }}</th>
+                                <th>VARITA MÁGICA: {{ hp_api.wand }}</th>
+                                <th>ASCENDENCIA: {{ hp_api.ancentry }}</th>
+                                <!--<td></td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Responsive Table End -->
+{% endblock %}
