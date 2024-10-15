@@ -16,6 +16,7 @@ urlpatterns = [
     path('testimonial/', testimonial, name='testimonial'),
     path('blog/', blog, name='blog'),
     path('cart/', cart, name='cart'),
+    path('Error404/', Error404, name='Error404'),
     path('account_locked/', account_locked, name="account_locked"),
     path('api/', include(router.urls)),
     path('clientesapi/', clientesapi, name='clientesapi'),

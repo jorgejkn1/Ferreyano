@@ -114,6 +114,9 @@ def contact(request):
 def testimonial(request):
     return render(request, 'core/testimonial.html')
 
+def Error404(request):
+    return render(request, 'core/Error404.html')
+
 def blog(request):
     return render(request, 'core/blog.html')
 
